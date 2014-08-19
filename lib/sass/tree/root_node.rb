@@ -28,7 +28,7 @@ module Sass
 
       def extended_result(result)
         File.open('/tmp/hoge', 'w') do |f|
-          puts result.split('/*').map { |x|
+          f.puts result.split('/*').map { |x|
             a, b = x.split("\n", 2)
             m = a.match(/\/app\/assets\/stylesheets\/([^. \/]+)\./)
             next nil unless m
