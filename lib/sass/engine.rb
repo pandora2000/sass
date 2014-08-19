@@ -394,6 +394,7 @@ ERR
       else
         root = Tree::RootNode.new(@template)
         append_children(root, tree(tabulate(@template)).first, true)
+        debugger
       end
 
       root.options = @options
