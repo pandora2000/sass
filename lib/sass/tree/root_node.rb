@@ -1,3 +1,5 @@
+require 'csspool'
+
 module Sass
   module Tree
     # A static node that is the root node of the Sass document.
@@ -64,7 +66,7 @@ module Sass
       def extended_result(result)
         result.split('/*').map { |x|
           next x if x.strip.empty?
-          a, b = x.split("\n",q 2)
+          a, b = x.split("\n", 2)
           m = a.match(/\/app\/assets\/stylesheets\/([^. ]+)\./)
           next "#{a}\n#{b}" unless m
           selector = calculate_selector(b.split("\n")[0].strip[0...-1].strip, m[1])
