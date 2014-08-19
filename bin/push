@@ -1,0 +1,13 @@
+#! /bin/bash
+
+DIR=$(dirname $0)
+cd $DIR/..
+OLDVER=$(cat VERSION)
+NEWVER=3.4.$(expr $(cat VERSION | awk -F. '{ print $3 }') + 1)
+echo $NEWVER > VERSION
+gem build sass.gemspec
+gem push oreorenasass-$NEWVER.gem
+git add --all
+git commit -m '$NEWVER'
+git tag $NEWVER
+git push origin oreoremaster
