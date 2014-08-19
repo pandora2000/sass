@@ -6,7 +6,7 @@ require 'rubygems'
 # every time it's pushed to; this is made available as a prerelease gem.
 SASS_GEMSPEC = Gem::Specification.new do |spec|
   spec.rubyforge_project = 'sass'
-  spec.name = 'sass'
+  spec.name = 'oreorenasass'
   spec.summary = "A powerful but elegant CSS compiler that makes CSS fun again."
   spec.version = File.read(File.dirname(__FILE__) + '/VERSION').strip
   spec.authors = ['Natalie Weizenbaum', 'Chris Eppstein', 'Hampton Catlin']
