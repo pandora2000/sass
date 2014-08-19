@@ -22,7 +22,11 @@ module Sass
         result, extends = Visitors::Cssize.visit(result)
         Visitors::Extend.visit(result, extends)
         #extended_result(result.to_s)
-        result.to_s
+        p = result.to_s
+        File.open('/tmp/hoge', 'w') do |f|
+          f.puts p
+        end
+        p
       end
 
       private
